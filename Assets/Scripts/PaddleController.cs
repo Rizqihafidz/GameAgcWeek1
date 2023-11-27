@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Paddle : MonoBehaviour
+public class PaddleController : MonoBehaviour
 {
     [SerializeField] private string input;
 
