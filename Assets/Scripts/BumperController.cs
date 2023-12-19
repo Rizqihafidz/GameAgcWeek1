@@ -7,13 +7,15 @@ public class BumperController : MonoBehaviour
     public Collider ball;
 
     [SerializeField] private float multiplier;
-    [SerializeField] private Color color;
+    [SerializeField] private Color color; 
+    [SerializeField] private float score;
     private Rigidbody ballRb;
     private Renderer render;
     private Animator animator;
 
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private VFXManager vfxManager;
+    [SerializeField] private ScoreManager scoreManager;
 
     private void Start()
     {
@@ -36,5 +38,7 @@ public class BumperController : MonoBehaviour
         audioManager.PlaySFX(collision.transform.position);
 
         vfxManager.PlayVFX(collision.transform.position);
+
+        scoreManager.AddScore(score);
     }
 }

@@ -21,6 +21,8 @@ public class SwitchController : MonoBehaviour
 
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private VFXManager vfxManager;
+    [SerializeField] private ScoreManager scoreManager;
+    [SerializeField] private float score;
 
     private void Start()
     {
@@ -69,6 +71,8 @@ public class SwitchController : MonoBehaviour
         {
             Set(true);
         }
+
+        scoreManager.AddScore(score);
     }
 
     private IEnumerator Blink(int times)
