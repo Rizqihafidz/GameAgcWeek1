@@ -19,6 +19,9 @@ public class SwitchController : MonoBehaviour
     private SwitchState state;
     private Renderer render;
 
+    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private VFXManager vfxManager;
+
     private void Start()
     {
         render = GetComponent<Renderer>();
@@ -34,6 +37,10 @@ public class SwitchController : MonoBehaviour
         {
             Toggle();
         }
+
+        audioManager.PlaySFX(other.transform.position);
+
+        vfxManager.PlayVFX(other.transform.position);
     }
 
     private void Set(bool active)

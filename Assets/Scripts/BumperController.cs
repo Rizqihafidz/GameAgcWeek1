@@ -12,6 +12,9 @@ public class BumperController : MonoBehaviour
     private Renderer render;
     private Animator animator;
 
+    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private VFXManager vfxManager;
+
     private void Start()
     {
         render = GetComponent<Renderer>();
@@ -29,5 +32,9 @@ public class BumperController : MonoBehaviour
         }
 
         animator.SetTrigger("hit");
+
+        audioManager.PlaySFX(collision.transform.position);
+
+        vfxManager.PlayVFX(collision.transform.position);
     }
 }
